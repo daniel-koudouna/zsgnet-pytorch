@@ -313,7 +313,7 @@ class ZSGNet(nn.Module):
         embeds = qtoks.permute(1, 0, 2).contiguous()
         # Packed Embeddings
         packed_embed_inp = pack_padded_sequence(
-            embeds, lengths=qlens1, batch_first=False)
+            embeds, lengths=qlens1.cpu(), batch_first=False)
         # To ensure no pains with DataParallel
         # self.lstm.flatten_parameters()
         lstm_out1, (self.hidden, _) = self.lstm(packed_embed_inp, self.hidden)

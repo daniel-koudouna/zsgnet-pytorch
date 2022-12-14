@@ -1,4 +1,11 @@
 {
+    "kitti": {
+	"data_dir": "./data/kitti",
+	"img_dir": "./data/kitti/images",
+	"trn_csv_file": "./data/kitti/csv_dir/train.csv",
+	"val_csv_file": "./data/kitti/csv_dir/val.csv",
+	"test_csv_file": "./data/kitti/csv_dir/test.csv"
+    },
     "flickr30k": {
 	"data_dir": "./data/flickr30k",
 	"img_dir": "./data/flickr30k/flickr30k_images",

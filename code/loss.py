@@ -76,7 +76,7 @@ class ZSGLoss(nn.Module):
         ious1 = IoU_values(annot, anchs)
         _, msk = ious1.max(1)
 
-        bbx_mask2 = torch.eye(anchs.size(0))[msk]
+        bbx_mask2 = torch.eye(anchs.size(0))[msk.to('cpu')]
         bbx_mask2 = bbx_mask2 > 0
         bbx_mask2 = bbx_mask2.to(device)
         top1_mask = bbx_mask2

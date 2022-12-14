@@ -178,7 +178,7 @@ class ImgQuDataset(Dataset):
                 image_fpath=trn_data.img_id.apply(lambda x: f'{x}.jpg'))
             trn_df = trn_data[['image_fpath',
                                'x1', 'y1', 'x2', 'y2', 'query']]
-        elif self.ds_name == 'refclef':
+        elif self.ds_name == 'refclef' or self.ds_name == 'kitti':
             trn_df = trn_data[['img_id',
                                'x1', 'y1', 'x2', 'y2', 'query']]
         return trn_df
